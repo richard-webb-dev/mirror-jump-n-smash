@@ -30,6 +30,15 @@ public class EnemySpawner : MonoBehaviour
             Debug.Log("Spawned enemy!");
             Debug.Log(timer);
         }
+
+        if(spawnInterval < 5.0f)
+        {
+            spawnInterval += Time.deltaTime;
+        }
+        if(spawnInterval > 5.0f)
+        {
+            spawnInterval = 5.0f;
+        }
     }
 
     void SpawnEnemy()
