@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 246660126}
   - component: {fileID: 246660128}
   - component: {fileID: 246660125}
+  - component: {fileID: 246660129}
   - component: {fileID: 246660124}
   - component: {fileID: 246660123}
   m_Layer: 0
@@ -449,7 +450,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1590632300}
         m_TargetAssemblyTypeName: cameraControlls, Assembly-CSharp
-        m_MethodName: shiftRight
+        m_MethodName: shiftLeft
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -564,6 +565,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+--- !u!114 &246660129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246660122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49505365c388b8b48b73a4b7da7a06d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shrinkTimer: 0
 --- !u!1 &302637904
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,6 +3804,7 @@ GameObject:
   - component: {fileID: 1693467829}
   - component: {fileID: 1693467831}
   - component: {fileID: 1693467828}
+  - component: {fileID: 1693467832}
   - component: {fileID: 1693467827}
   - component: {fileID: 1693467826}
   m_Layer: 0
@@ -3878,7 +3893,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1590632300}
         m_TargetAssemblyTypeName: cameraControlls, Assembly-CSharp
-        m_MethodName: shiftLeft
+        m_MethodName: shiftRight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3993,6 +4008,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+--- !u!114 &1693467832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693467825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49505365c388b8b48b73a4b7da7a06d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shrinkTimer: 0
 --- !u!1 &1758191248
 GameObject:
   m_ObjectHideFlags: 0
@@ -4024,6 +4052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1809698089916618770, guid: 0584150cc6f154af5a1f5833ce803bb7, type: 3}
+  powerUpPrefab: {fileID: 6370299797963736046, guid: 846e646e1d85eaf4e9ecb088922ac508, type: 3}
   spawnPoints:
   - {fileID: 452501826}
   - {fileID: 315370766}

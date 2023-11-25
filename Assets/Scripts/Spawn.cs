@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public GameObject powerUpPrefab;
     public List<Transform> spawnPoints = new List<Transform>();
     public float spawnInterval = 5.0f;
 
@@ -41,7 +42,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    void SpawnEnemy()
+    public void SpawnEnemy()
     {
         List<Transform> candidates = new List<Transform>();
         foreach (Transform child in transform)
@@ -51,19 +52,32 @@ public class EnemySpawner : MonoBehaviour
                 candidates.Add(child);
             }
         }
+        int r = Random.Range(0, 10);
+        
 
         if (candidates.Count != 0)
         {
-            int spawnIndex = Random.Range(0, candidates.Count);
-            GameObject newEnemy = Instantiate(enemyPrefab, candidates[spawnIndex].position, Quaternion.identity);
-            candidates[spawnIndex].GetComponent<SpawnPoint>().occupied = true;
-            newEnemy.transform.SetParent(candidates[spawnIndex]);
-
-            Enemy enemyScript = newEnemy.GetComponent<Enemy>();
-            if (enemyScript != null)
+            if (r < 30)
             {
-                enemyScript.player = player.transform;
+                int spawnIndex = Random.Range(0, candidates.Count);
+                GameObject newPowerup = Instantiate(powerUpPrefab, candidates[spawnIndex].position, Quaternion.identity);
+                candidates[spawnIndex].GetComponent<SpawnPoint>().occupied = true;
+                newPowerup.transform.SetParent(candidates[spawnIndex]);
             }
+            else
+            {
+                int spawnIndex = Random.Range(0, candidates.Count);
+                GameObject newEnemy = Instantiate(enemyPrefab, candidates[spawnIndex].position, Quaternion.identity);
+                candidates[spawnIndex].GetComponent<SpawnPoint>().occupied = true;
+                newEnemy.transform.SetParent(candidates[spawnIndex]);
+
+                Enemy enemyScript = newEnemy.GetComponent<Enemy>();
+                if (enemyScript != null)
+                {
+                    enemyScript.player = player.transform;
+                }
+            }
+            
         }
 
     }

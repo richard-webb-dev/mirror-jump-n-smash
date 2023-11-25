@@ -25,7 +25,7 @@ public class PowerUp : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         spawnerL = GameObject.Find("SpawnerLeft");
-        spawnerR = GameObject.Find("SpawnerRight");
+        spawnerR = GameObject.Find("SpawnerLeft(Clone)");
         int r = Random.Range(0, count);
         switch (r)
         {
@@ -77,8 +77,18 @@ public class PowerUp : MonoBehaviour
                 case PowerType.moreSpawn:
                     {
                         if(collision.GetComponent<PlayerOne>().p == PlayerOne.player.one){
-                            spawnerR.GetComponent<EnemySpawner>().spawnInterval = 2f;
+                            spawnerR.GetComponent<EnemySpawner>().SpawnEnemy();
+                            spawnerR.GetComponent<EnemySpawner>().SpawnEnemy();
+                            spawnerR.GetComponent<EnemySpawner>().SpawnEnemy();
+
                         }
+                        else
+                        {
+                            spawnerL.GetComponent<EnemySpawner>().SpawnEnemy();
+                            spawnerL.GetComponent<EnemySpawner>().SpawnEnemy();
+                            spawnerL.GetComponent<EnemySpawner>().SpawnEnemy();
+                        }
+                        Destroy(gameObject);
                         break;
                     }
                 default:
