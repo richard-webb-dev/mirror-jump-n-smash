@@ -49,6 +49,13 @@ public class Mirror : MonoBehaviour
                 if (child.transform.position.x > 0) continue;
                 GameObject childCopy = Instantiate(child, new Vector3(child.transform.position.x * -1, child.transform.position.y, 0), Quaternion.identity);
                 childCopy.transform.SetParent(parentCopy.transform);
+
+                // set sprite color
+                SpriteRenderer sr = childCopy.GetComponent<SpriteRenderer>();
+                if (sr != null)
+                {
+                    sr.color = new Color(0.8f, 0.3f, 0.3f, 1);
+                }
             }
         }
     }
