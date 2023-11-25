@@ -20,6 +20,11 @@ public class PowerUp : MonoBehaviour
 
     public GameObject spawnerL;
     public GameObject spawnerR;
+
+    [FMODUnity.EventRef]
+    public string eventName = "event:/SFX/PowerUpPickup";
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -94,6 +99,9 @@ public class PowerUp : MonoBehaviour
                 default:
                     break;
             }
+
+            FMOD.Studio.EventInstance eventInstance = FMODUnity.RuntimeManager.CreateInstance(eventName);
+            eventInstance.start();
         }
     }
 
