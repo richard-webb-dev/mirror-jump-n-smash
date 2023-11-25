@@ -9746,7 +9746,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f10b6dc80894c5c4ea6d2bf7641d2193, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9774,8 +9774,8 @@ MonoBehaviour:
   maxAcceleration: 52
   maxDecceleration: 52
   maxTurnSpeed: 80
-  maxAirAcceleration: 0
-  maxAirDeceleration: 0
+  maxAirAcceleration: 50
+  maxAirDeceleration: 13.7
   maxAirTurnSpeed: 80
   friction: 0.2
   useAcceleration: 0
@@ -9822,8 +9822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15cee9fd69153264086e949e0b18840a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundLength: 0.95
-  colliderOffset: {x: 0, y: -0.5, z: 0}
+  groundLength: 1.6
+  colliderOffset: {x: 0, y: 0.5, z: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9865,8 +9865,8 @@ MonoBehaviour:
   jumpSqueezeMultiplier: 0
   landDrop: 1
   leanForward: 1
-  maxTilt: 0.3
-  tiltSpeed: 1
+  maxTilt: 4.15
+  tiltSpeed: 2.39
   runningSpeed: 1
   maxSpeed: 3
   squeezing: 0
@@ -10103,8 +10103,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.01439786, y: 0.12957644}
+  m_Size: {x: 1.8350368, y: 4.389934}
   m_Direction: 0
 --- !u!1 &9042629881112333930
 GameObject:
