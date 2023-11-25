@@ -7,6 +7,7 @@ public class PlayerOne : MonoBehaviour
 {
     public UnityEvent bulletHit;
     public UnityEvent onDeath;
+    public UnityEvent onJump;
 
     public float speed = 5f;
     public float jumpStrenght = 5f;
@@ -69,6 +70,7 @@ public class PlayerOne : MonoBehaviour
         if (Input.GetKeyDown(up) && grounded)
         {
             rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+            onJump.Invoke();
         }
 
         //Bounding Controlls
