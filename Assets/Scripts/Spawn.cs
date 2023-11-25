@@ -57,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (candidates.Count != 0)
         {
-            if (r < 30)
+            if (r < 3)
             {
                 int spawnIndex = Random.Range(0, candidates.Count);
                 GameObject newPowerup = Instantiate(powerUpPrefab, candidates[spawnIndex].position, Quaternion.identity);
