@@ -85,6 +85,11 @@ public class PlayerOne : MonoBehaviour
                 pos.x = divider.position.x - divider.GetComponent<Collider2D>().bounds.extents.x - GetComponent<Collider2D>().bounds.extents.x;
                 transform.position = pos;
             }
+            if (leftBorder.position.x > 0)
+            {
+                onDeath.Invoke();
+                Debug.Log("Player 1 wins!");
+            }
         }
         if (p == player.two)
         {
@@ -100,7 +105,14 @@ public class PlayerOne : MonoBehaviour
                 pos.x = divider.position.x + divider.GetComponent<Collider2D>().bounds.extents.x + GetComponent<Collider2D>().bounds.extents.x;
                 transform.position = pos;
             }
+
+            if (rightBorder.position.x < 0)
+            {
+                onDeath.Invoke();
+                Debug.Log("Player 2 wins!");
+            }
         }
+
     }
 
 
@@ -125,12 +137,6 @@ public class PlayerOne : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             bulletHit.Invoke();
-            health -= 10f;
-        }
-
-        if (health <= 0)
-        {
-            onDeath.Invoke();
         }
     }
 
