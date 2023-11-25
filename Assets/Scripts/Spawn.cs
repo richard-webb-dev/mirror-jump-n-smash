@@ -7,8 +7,10 @@ public class EnemySpawner : MonoBehaviour
     public Transform[] spawnPoints;
     public float spawnInterval = 5.0f;
 
+
     private float timer;
 
+    public GameObject player;
     void Start()
     {
         timer = spawnInterval;
@@ -34,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
         Enemy enemyScript = newEnemy.GetComponent<Enemy>();
         if (enemyScript != null)
         {
-            enemyScript.player = FindObjectOfType<Player>().transform;
+            enemyScript.player = player.transform;
         }
     }
 }

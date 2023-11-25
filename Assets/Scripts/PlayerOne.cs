@@ -15,6 +15,10 @@ public class PlayerOne : MonoBehaviour
 
     public UnityEvent bulletHit;
 
+    public Transform leftBorder;
+    public Transform rightBorder;
+    public Transform divider;
+
     public enum player
     {
         one, two
@@ -49,6 +53,7 @@ public class PlayerOne : MonoBehaviour
     void Update()
     {
 
+        //Character Controlls
         if (Input.GetKey(right))
         {
             transform.Translate(speed * Time.deltaTime, 0, 0);
@@ -63,6 +68,39 @@ public class PlayerOne : MonoBehaviour
         if (Input.GetKeyDown(up) && grounded)
         {
             rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+        }
+
+        //Bounding Controlls
+
+        if(p == player.one)
+        {
+            if(transform.position.x < leftBorder.position.x + leftBorder.GetComponent<Collider2D>().bounds.extents.x)
+            {
+                Vector3 pos = transform.position;
+                pos.x = leftBorder.position.x + leftBorder.GetComponent<Collider2D>().bounds.extents.x + GetComponent<Collider2D>().bounds.extents.x;
+                transform.position = pos;
+            }
+            if (transform.position.x > divider.position.x + divider.GetComponent<Collider2D>().bounds.extents.x)
+            {
+                Vector3 pos = transform.position;
+                pos.x = divider.position.x - divider.GetComponent<Collider2D>().bounds.extents.x - GetComponent<Collider2D>().bounds.extents.x;
+                transform.position = pos;
+            }
+        }
+        if (p == player.two)
+        {
+            if (transform.position.x > rightBorder.position.x + rightBorder.GetComponent<Collider2D>().bounds.extents.x)
+            {
+                Vector3 pos = transform.position;
+                pos.x = rightBorder.position.x - rightBorder.GetComponent<Collider2D>().bounds.extents.x - GetComponent<Collider2D>().bounds.extents.x;
+                transform.position = pos;
+            }
+            if (transform.position.x < divider.position.x + divider.GetComponent<Collider2D>().bounds.extents.x)
+            {
+                Vector3 pos = transform.position;
+                pos.x = divider.position.x + divider.GetComponent<Collider2D>().bounds.extents.x + GetComponent<Collider2D>().bounds.extents.x;
+                transform.position = pos;
+            }
         }
     }
 
