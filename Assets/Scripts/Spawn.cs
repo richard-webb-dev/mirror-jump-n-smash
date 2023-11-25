@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         timer = spawnInterval;
-        foreach(Transform child in transform)
+        foreach (Transform child in transform)
         {
             spawnPoints.Add(child);
         }
@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemy()
     {
         List<Transform> candidates = new List<Transform>();
-        foreach(Transform child in transform)
+        foreach (Transform child in transform)
         {
             if (!child.GetComponent<SpawnPoint>().occupied && child.GetComponent<SpawnPoint>().active)
             {
@@ -43,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
-        if(candidates.Count != 0)
+        if (candidates.Count != 0)
         {
             int spawnIndex = Random.Range(0, candidates.Count);
             GameObject newEnemy = Instantiate(enemyPrefab, candidates[spawnIndex].position, Quaternion.identity);
@@ -56,6 +56,6 @@ public class EnemySpawner : MonoBehaviour
                 enemyScript.player = player.transform;
             }
         }
-        
+
     }
 }

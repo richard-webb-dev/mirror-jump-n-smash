@@ -25,6 +25,8 @@ public class PlayerOne : MonoBehaviour
         one, two
     }
 
+    public GameManager gm;
+
     public player p;
 
     private KeyCode left;
@@ -88,6 +90,7 @@ public class PlayerOne : MonoBehaviour
             if (leftBorder.position.x > 0)
             {
                 onDeath.Invoke();
+                gm.showGameOverScreen(false);
             }
         }
         if (p == player.two)
@@ -108,6 +111,7 @@ public class PlayerOne : MonoBehaviour
             if (rightBorder.position.x < 0)
             {
                 onDeath.Invoke();
+                gm.showGameOverScreen(true);
             }
         }
 

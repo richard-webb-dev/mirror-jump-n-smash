@@ -23,11 +23,15 @@ public class cameraControlls : MonoBehaviour
 
     public void shiftLeft()
     {
-        StartCoroutine(ShiftPosition(new Vector3(transform.position.x - shiftAmount, transform.position.y, transform.position.z), shiftDuration));
+        transform.position = new Vector3(transform.position.x - shiftAmount, transform.position.y, transform.position.z);
+
+        //StartCoroutine(ShiftPosition(new Vector3(transform.position.x - shiftAmount, transform.position.y, transform.position.z), shiftDuration));
     }
     public void shiftRight()
     {
-        StartCoroutine(ShiftPosition(new Vector3(transform.position.x + shiftAmount, transform.position.y, transform.position.z), shiftDuration));
+        transform.position = new Vector3(transform.position.x + shiftAmount, transform.position.y, transform.position.z);
+
+        // StartCoroutine(ShiftPosition(new Vector3(transform.position.x + shiftAmount, transform.position.y, transform.position.z), shiftDuration));
     }
 
     IEnumerator ShiftPosition(Vector3 targetPosition, float duration)

@@ -22,14 +22,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(score >= 7)
-        {
-            showGameOverScreen(true);
-        }
-        if(score <= -7)
-        {
-            showGameOverScreen(false);
-        }
     }
 
     public void showGameOverScreen(bool playerOneWin)
@@ -43,7 +35,7 @@ public class GameManager : MonoBehaviour
         {
             gameOverText.text = "Player Two WINS!";
         }
-        
+
         gameOverPanel.SetActive(true);
         Debug.Log("Game Over");
         Time.timeScale = 0f;
