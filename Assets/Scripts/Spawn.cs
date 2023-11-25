@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public Transform[] spawnPoints;
+    public List<Transform> spawnPoints = new List<Transform>();
     public float spawnInterval = 5.0f;
 
 
@@ -14,6 +14,10 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         timer = spawnInterval;
+        foreach(Transform child in transform)
+        {
+            spawnPoints.Add(child);
+        }
     }
 
     void Update()
@@ -30,13 +34,28 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        int spawnIndex = Random.Range(0, spawnPoints.Length);
-        GameObject newEnemy = Instantiate(enemyPrefab, spawnPoints[spawnIndex].position, Quaternion.identity);
-
-        Enemy enemyScript = newEnemy.GetComponent<Enemy>();
-        if (enemyScript != null)
+        List<Transform> candidates = new List<Transform>();
+        foreach(Transform child in transform)
         {
-            enemyScript.player = player.transform;
+            if (!child.GetComponent<SpawnPoint>().occupied && child.GetComponent<SpawnPoint>().active)
+            {
+                candidates.Add(child);
+            }
         }
+
+        if(candidates.Count != 0)
+        {
+            int spawnIndex = Random.Range(0, candidates.Count);
+            GameObject newEnemy = Instantiate(enemyPrefab, candidates[spawnIndex].position, Quaternion.identity);
+            candidates[spawnIndex].GetComponent<SpawnPoint>().occupied = true;
+            newEnemy.transform.SetParent(candidates[spawnIndex]);
+
+            Enemy enemyScript = newEnemy.GetComponent<Enemy>();
+            if (enemyScript != null)
+            {
+                enemyScript.player = player.transform;
+            }
+        }
+        
     }
 }
