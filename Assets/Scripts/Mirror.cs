@@ -4,16 +4,38 @@ using UnityEngine;
 
 public class Mirror : MonoBehaviour
 {
-    public Transform ObjA;
-    public Vector2 Origin; // Origin point for mirroring
+    public GameObject OriginalPrefab;
 
+    private GameObject copy;
+
+    public GameObject spawnerR;
+
+    public enum MirrorType
+    {
+        platform,
+        spawner
+    }
+    public MirrorType type;
+
+    private void Awake()
+    {
+        if(OriginalPrefab != null)
+        {
+            copy = Instantiate(OriginalPrefab, new Vector3(transform.position.x * -1, transform.position.y, 0), Quaternion.identity);
+            if (type == MirrorType.spawner)
+            {
+                copy.transform.SetParent(spawnerR.transform);
+            }
+        }
+        
+
+    }
     private void Update()
     {
-        // Mirroring ObjA's position on the X-axis about Origin.x
-        float mirroredX = Origin.x - (ObjA.position.x - Origin.x);
-        float sameY = ObjA.position.y; // Keeping the Y-coordinate the same
-
-        // Applying the mirrored position to this GameObject
-        transform.position = new Vector2(mirroredX, sameY);
+        if(copy != null)
+        {
+            copy.transform.position = new Vector3(transform.position.x * -1, transform.position.y, 0);
+        }
+        
     }
 }

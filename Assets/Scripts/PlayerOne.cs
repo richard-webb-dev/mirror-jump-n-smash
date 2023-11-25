@@ -88,7 +88,6 @@ public class PlayerOne : MonoBehaviour
             if (leftBorder.position.x > 0)
             {
                 onDeath.Invoke();
-                Debug.Log("Player 1 wins!");
             }
         }
         if (p == player.two)
@@ -109,7 +108,6 @@ public class PlayerOne : MonoBehaviour
             if (rightBorder.position.x < 0)
             {
                 onDeath.Invoke();
-                Debug.Log("Player 2 wins!");
             }
         }
 

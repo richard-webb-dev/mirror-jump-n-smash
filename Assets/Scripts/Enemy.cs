@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     public Transform player;
     public float speed = 5.0f;
 
-    public float shootingForce = 50.0f;
+    public float shootingForce = 1.0f;
 
     public GameObject projectilePrefab;
     public float shootingInterval = 2.0f;
@@ -22,8 +22,8 @@ public class Enemy : MonoBehaviour
     void Update()
     {
 
-        Vector2 direction = (player.position - transform.position).normalized;
-        transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+       // Vector2 direction = (player.position - transform.position).normalized;
+        //transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
         shootingTimer += Time.deltaTime;
         if (shootingTimer >= shootingInterval)
@@ -38,5 +38,15 @@ public class Enemy : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         Vector2 shootingDirection = (player.position - transform.position).normalized;
         projectile.GetComponent<Rigidbody2D>().velocity = shootingDirection * shootingForce;
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "player")
+        {
+            transform.parent.GetComponent<SpawnPoint>().occupied = false;
+            Destroy(gameObject);
+        }
     }
 }
