@@ -41,13 +41,13 @@ public class PowerUp : MonoBehaviour
                 break;
         }
 
-        if(power == PowerType.shrink)
+        if (power == PowerType.shrink)
         {
-            sr.color = Color.green;
+            sr.color = Color.yellow;
         }
         if (power == PowerType.moreSpawn)
         {
-            sr.color = Color.red;
+            sr.color = Color.green;
         }
 
     }
@@ -55,11 +55,11 @@ public class PowerUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 
 
-  
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -76,7 +76,8 @@ public class PowerUp : MonoBehaviour
                     }
                 case PowerType.moreSpawn:
                     {
-                        if(collision.GetComponent<PlayerOne>().p == PlayerOne.player.one){
+                        if (collision.GetComponent<PlayerOne>().p == PlayerOne.player.one)
+                        {
                             spawnerR.GetComponent<EnemySpawner>().SpawnEnemy();
                             spawnerR.GetComponent<EnemySpawner>().SpawnEnemy();
                             spawnerR.GetComponent<EnemySpawner>().SpawnEnemy();

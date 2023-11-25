@@ -28,12 +28,12 @@ public class GameManager : MonoBehaviour
     {
         if (playerOneWin)
         {
-            gameOverText.text = "Playey One WINS!";
+            gameOverText.text = "Blue WINS!";
 
         }
         if (!playerOneWin)
         {
-            gameOverText.text = "Player Two WINS!";
+            gameOverText.text = "Red WINS!";
         }
 
         gameOverPanel.SetActive(true);
