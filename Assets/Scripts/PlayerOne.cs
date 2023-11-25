@@ -5,19 +5,20 @@ using UnityEngine.Events;
 
 public class PlayerOne : MonoBehaviour
 {
+    public UnityEvent bulletHit;
+    public UnityEvent onDeath;
+
     public float speed = 5f;
-
     public float jumpStrenght = 5f;
-
-    private Rigidbody2D rb;
-
     public bool grounded = false;
 
-    public UnityEvent bulletHit;
+    private Rigidbody2D rb;
 
     public Transform leftBorder;
     public Transform rightBorder;
     public Transform divider;
+
+    public float health = 100f;
 
     public enum player
     {
@@ -35,7 +36,7 @@ public class PlayerOne : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        if(p == player.one)
+        if (p == player.one)
         {
             left = KeyCode.A;
             right = KeyCode.D;
@@ -57,12 +58,10 @@ public class PlayerOne : MonoBehaviour
         if (Input.GetKey(right))
         {
             transform.Translate(speed * Time.deltaTime, 0, 0);
-
         }
         if (Input.GetKey(left))
         {
             transform.Translate(-speed * Time.deltaTime, 0, 0);
-
         }
 
         if (Input.GetKeyDown(up) && grounded)
@@ -72,9 +71,9 @@ public class PlayerOne : MonoBehaviour
 
         //Bounding Controlls
 
-        if(p == player.one)
+        if (p == player.one)
         {
-            if(transform.position.x < leftBorder.position.x + leftBorder.GetComponent<Collider2D>().bounds.extents.x)
+            if (transform.position.x < leftBorder.position.x + leftBorder.GetComponent<Collider2D>().bounds.extents.x)
             {
                 Vector3 pos = transform.position;
                 pos.x = leftBorder.position.x + leftBorder.GetComponent<Collider2D>().bounds.extents.x + GetComponent<Collider2D>().bounds.extents.x;
@@ -123,8 +122,16 @@ public class PlayerOne : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "´Bullet")
-        bulletHit.Invoke();
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            bulletHit.Invoke();
+            health -= 10f;
+        }
+
+        if (health <= 0)
+        {
+            onDeath.Invoke();
+        }
     }
 
 
