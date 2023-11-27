@@ -5,8 +5,6 @@ using UnityEngine.Events;
 
 public class PlayerOne : MonoBehaviour
 {
-    public UnityEvent bulletHit;
-    public UnityEvent onDeath;
     public UnityEvent onJump;
 
     public float speed = 5f;
@@ -93,14 +91,4 @@ public class PlayerOne : MonoBehaviour
             grounded = false;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            bulletHit.Invoke();
-        }
-    }
-
-
 }
