@@ -20,6 +20,8 @@ public class characterJuice : MonoBehaviour
     [Header("Components - Audio")]
     [SerializeField] FMODUnity.EventReference jumpSFX;
     [SerializeField] FMODUnity.EventReference landSFX;
+    [SerializeField] bool hasJumpSFX = true;
+    [SerializeField] bool hasLandSFX = true;
 
     [Header("Settings - Squash and Stretch")]
     [SerializeField] bool squashAndStretch;
@@ -100,7 +102,7 @@ public class characterJuice : MonoBehaviour
             myAnimator.SetTrigger("Landed");
             landParticles.Play();
 
-            FMODUnity.RuntimeManager.PlayOneShot(landSFX, transform.position);
+            if (hasLandSFX) FMODUnity.RuntimeManager.PlayOneShot((FMODUnity.EventReference)landSFX, transform.position);
 
             moveParticles.Play();
 
@@ -140,7 +142,7 @@ public class characterJuice : MonoBehaviour
         myAnimator.ResetTrigger("Landed");
         myAnimator.SetTrigger("Jump");
 
-        FMODUnity.RuntimeManager.PlayOneShot(jumpSFX, transform.position);
+        if (hasJumpSFX) FMODUnity.RuntimeManager.PlayOneShot((FMODUnity.EventReference)jumpSFX, transform.position);
 
         if (!jumpSqueezing && jumpSqueezeMultiplier > 1)
         {

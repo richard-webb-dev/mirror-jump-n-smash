@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerPowerUp : MonoBehaviour
 {
     public float shrinkTimer = 0f;
+    public Vector3 shrinkToSize = new Vector3(0.4f, 0.25f, 1f);
+    public Vector3 defaultSize = new Vector3(0.6f, 0.4f, 1f); /** should probably be 1, but left for backwards compatibility */
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +18,11 @@ public class PlayerPowerUp : MonoBehaviour
     {
         if (shrinkTimer != 0f)
         {
-            transform.localScale = new Vector3(0.4f, 0.25f, 1f);
+            transform.localScale = shrinkToSize;
         }
         else
         {
-            transform.localScale = new Vector3(0.6f, 0.4f, 1f);
+            transform.localScale = defaultSize;
         }
 
         if (shrinkTimer > 0)

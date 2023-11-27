@@ -137,7 +137,12 @@ public class characterJump : MonoBehaviour
 
             //Skip gravity calculations this frame, so currentlyJumping doesn't turn off
             //This makes sure you can't do the coyote time double jump bug
-            return;
+            //return;
+            
+            // Without this though, the downward gravity multiplier adds onto the DoAJump upwards force, causing a spring like effect.
+            // It'd be cool, but the scripts are floaty enough that a large downward force is needed, and therefore the effect is way too OTT.
+            // These scripts are messy and buggy - i'm disappointed!
+            calculateGravity();
         }
 
         calculateGravity();

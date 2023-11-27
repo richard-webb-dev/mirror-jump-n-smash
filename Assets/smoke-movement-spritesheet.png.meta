@@ -1,0 +1,516 @@
+fileFormatVersion: 2
+guid: fe0dfa37862d7ae4a87f76f0bd4c722d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 241
+        width: 60
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6918dbc336cee0245bcf77ea6366b976
+      internalID: -1207661366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 240
+        width: 60
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed258d717234f64bb32ca24e351eb10
+      internalID: -433704586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 240
+        width: 60
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26f4c87916ac9e4fbdb965e39d1697c
+      internalID: 1237338042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 240
+        width: 152
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5dea4d630551bd499dc14fc0020d1fc
+      internalID: 2052792949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 240
+        width: 40
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32ccd1e0d95baa48898612fc514595c
+      internalID: -1171888350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 240
+        width: 40
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e8cbcdd0104c2438a3009a13876f47
+      internalID: 1882030441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 240
+        width: 184
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422fd292183c3d9449c82caba5d4ab2a
+      internalID: -659864229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 237
+        width: 196
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f42b6ca775ae543b9d4100dc076a8d
+      internalID: 1701219359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 63
+        width: 183
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ebe1b769e08d4f419a8e30f2263145f
+      internalID: 623706489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 61
+        width: 227
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484ea88e67540ef4dbff6612ffb68da5
+      internalID: -163511740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 61
+        width: 218
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be66f90c4a0b4048a44f2f2d3e8d0b5
+      internalID: -1988737162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 62
+        width: 216
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6166deae6a43114d8675b8ffc628af3
+      internalID: -562823333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 62
+        width: 189
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 535412002e641b64e85c45742224d662
+      internalID: 1338332615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: smoke-movement-spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 240
+        width: 100
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba746cd948c7524e82e3882f40e7292
+      internalID: -95681146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      smoke-movement-spritesheet_0: -1207661366
+      smoke-movement-spritesheet_1: -433704586
+      smoke-movement-spritesheet_10: -1988737162
+      smoke-movement-spritesheet_11: -562823333
+      smoke-movement-spritesheet_12: 1338332615
+      smoke-movement-spritesheet_13: 708843315
+      smoke-movement-spritesheet_14: 643848276
+      smoke-movement-spritesheet_15: -909461957
+      smoke-movement-spritesheet_16: 1746094454
+      smoke-movement-spritesheet_17: -95681146
+      smoke-movement-spritesheet_18: 2030330555
+      smoke-movement-spritesheet_19: -1540814299
+      smoke-movement-spritesheet_2: 1237338042
+      smoke-movement-spritesheet_20: -1814313130
+      smoke-movement-spritesheet_21: -1072168889
+      smoke-movement-spritesheet_22: 38848753
+      smoke-movement-spritesheet_23: 871033676
+      smoke-movement-spritesheet_24: 44297689
+      smoke-movement-spritesheet_25: 584184658
+      smoke-movement-spritesheet_26: 986205058
+      smoke-movement-spritesheet_27: -1684539803
+      smoke-movement-spritesheet_28: -539996738
+      smoke-movement-spritesheet_29: -1898492170
+      smoke-movement-spritesheet_3: 2052792949
+      smoke-movement-spritesheet_30: 1610485484
+      smoke-movement-spritesheet_31: 1060255961
+      smoke-movement-spritesheet_32: -632857066
+      smoke-movement-spritesheet_33: 11888296
+      smoke-movement-spritesheet_34: -1289661697
+      smoke-movement-spritesheet_35: 581874802
+      smoke-movement-spritesheet_36: -670848542
+      smoke-movement-spritesheet_37: -780733865
+      smoke-movement-spritesheet_38: 1108610859
+      smoke-movement-spritesheet_39: -1602537191
+      smoke-movement-spritesheet_4: -1171888350
+      smoke-movement-spritesheet_40: 675052622
+      smoke-movement-spritesheet_41: -1402920649
+      smoke-movement-spritesheet_42: 444636953
+      smoke-movement-spritesheet_43: -1613021777
+      smoke-movement-spritesheet_44: 1972665169
+      smoke-movement-spritesheet_45: 2141389463
+      smoke-movement-spritesheet_46: 1003895288
+      smoke-movement-spritesheet_47: 1088343454
+      smoke-movement-spritesheet_48: 140177411
+      smoke-movement-spritesheet_49: -2024850362
+      smoke-movement-spritesheet_5: 1882030441
+      smoke-movement-spritesheet_50: 1315550783
+      smoke-movement-spritesheet_51: -1792646102
+      smoke-movement-spritesheet_52: 1417580267
+      smoke-movement-spritesheet_53: -70315117
+      smoke-movement-spritesheet_54: -2144953604
+      smoke-movement-spritesheet_55: -1369837556
+      smoke-movement-spritesheet_56: 1516771914
+      smoke-movement-spritesheet_57: -306182438
+      smoke-movement-spritesheet_58: -1221437184
+      smoke-movement-spritesheet_59: -481162552
+      smoke-movement-spritesheet_6: -659864229
+      smoke-movement-spritesheet_60: -1237373119
+      smoke-movement-spritesheet_61: -476192557
+      smoke-movement-spritesheet_62: -865321519
+      smoke-movement-spritesheet_63: -1157582414
+      smoke-movement-spritesheet_64: -650596102
+      smoke-movement-spritesheet_65: 213066276
+      smoke-movement-spritesheet_66: 1083597939
+      smoke-movement-spritesheet_67: 183543209
+      smoke-movement-spritesheet_68: 1351427157
+      smoke-movement-spritesheet_69: -1450871890
+      smoke-movement-spritesheet_7: 1701219359
+      smoke-movement-spritesheet_70: -1468684669
+      smoke-movement-spritesheet_71: -2077285482
+      smoke-movement-spritesheet_72: 1737438709
+      smoke-movement-spritesheet_73: 1200961006
+      smoke-movement-spritesheet_74: 1502889061
+      smoke-movement-spritesheet_75: -23643396
+      smoke-movement-spritesheet_76: -922195672
+      smoke-movement-spritesheet_77: -1175475503
+      smoke-movement-spritesheet_78: 146351836
+      smoke-movement-spritesheet_79: -1613552168
+      smoke-movement-spritesheet_8: 623706489
+      smoke-movement-spritesheet_80: -637085990
+      smoke-movement-spritesheet_81: 555372246
+      smoke-movement-spritesheet_82: -358483101
+      smoke-movement-spritesheet_83: 136134486
+      smoke-movement-spritesheet_84: -2056285239
+      smoke-movement-spritesheet_85: 1091450038
+      smoke-movement-spritesheet_86: 922350304
+      smoke-movement-spritesheet_87: 143018728
+      smoke-movement-spritesheet_88: 1589125816
+      smoke-movement-spritesheet_89: 1783682721
+      smoke-movement-spritesheet_9: -163511740
+      smoke-movement-spritesheet_90: 2026862490
+      smoke-movement-spritesheet_91: 1986389554
+      smoke-movement-spritesheet_92: -279209413
+      smoke-movement-spritesheet_93: -1010217173
+      smoke-movement-spritesheet_94: -601230630
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

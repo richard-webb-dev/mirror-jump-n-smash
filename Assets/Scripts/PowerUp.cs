@@ -81,7 +81,7 @@ public class PowerUp : MonoBehaviour
                     }
                 case PowerType.moreSpawn:
                     {
-                        if (collision.GetComponent<PlayerOne>().p == PlayerOne.player.one)
+                        if (collision.GetComponent<PlayerPositionConstrainer>().p == player.one)
                         {
                             spawnerR.GetComponent<EnemySpawner>().SpawnEnemy();
                             spawnerR.GetComponent<EnemySpawner>().SpawnEnemy();
