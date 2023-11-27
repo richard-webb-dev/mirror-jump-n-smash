@@ -11,7 +11,6 @@ public enum player
 /** ensures player never leaves the box */
 public class PlayerPositionConstrainer : MonoBehaviour
 {
-    public GameManager gm;
     public player p;
     public UnityEvent onDeath;
     public Transform leftBorder;
@@ -39,7 +38,6 @@ public class PlayerPositionConstrainer : MonoBehaviour
             if (leftBorder.position.x > 0)
             {
                 onDeath.Invoke();
-                gm.showGameOverScreen(false);
             }
         }
         if (p == player.two)
@@ -60,7 +58,6 @@ public class PlayerPositionConstrainer : MonoBehaviour
             if (rightBorder.position.x < 0)
             {
                 onDeath.Invoke();
-                gm.showGameOverScreen(true);
             }
         }
     }
