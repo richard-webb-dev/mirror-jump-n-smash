@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3008917547630018286}
   - component: {fileID: 8992500965877048724}
-  - component: {fileID: 6199051444791032337}
-  - component: {fileID: 5580747262045280750}
+  - component: {fileID: 1071865952584055093}
   m_Layer: 0
-  m_Name: platformA
+  m_Name: platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6199051444791032337
-BoxCollider2D:
+--- !u!70 &1071865952584055093
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118,29 +117,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &5580747262045280750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2522562734672105208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e386e391c5d5b45f1838cf712106337a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OriginalPrefab: {fileID: 0}
+  m_Offset: {x: -0.003328467, y: 0.00000030026115}
+  m_Size: {x: 1.0199693, y: 1.0000007}
+  m_Direction: 1
