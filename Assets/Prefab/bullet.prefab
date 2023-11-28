@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4767170865792363442}
   - component: {fileID: 886433838883428189}
   - component: {fileID: 4542901341186472461}
+  - component: {fileID: -1252818756062242333}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Bullet
@@ -55,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: beb7dbd65cdd8214982fc44285a873b9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -161,3 +162,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52ac62101fc2ce4c9c50b7228f6d87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1252818756062242333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7724700668326826102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee158225ee1e59f4791627785501d950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderTypes: 0
+  normalStrength: 5
+  normalSmoothing: 1
+  computingNormal: 0
