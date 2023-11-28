@@ -1,52 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class cameraControlls : MonoBehaviour
 {
     public float shiftAmount = 1f; // Distance to shift
     public float shiftDuration = 0.5f; // Duration of the shift
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    public float targetX = 0f;
 
     public void shiftLeft()
     {
-        transform.position = new Vector3(transform.position.x - shiftAmount, transform.position.y, transform.position.z);
-
-        //StartCoroutine(ShiftPosition(new Vector3(transform.position.x - shiftAmount, transform.position.y, transform.position.z), shiftDuration));
+        targetX -= shiftAmount;
+        ShiftPosition();
     }
     public void shiftRight()
     {
-        transform.position = new Vector3(transform.position.x + shiftAmount, transform.position.y, transform.position.z);
-
-        // StartCoroutine(ShiftPosition(new Vector3(transform.position.x + shiftAmount, transform.position.y, transform.position.z), shiftDuration));
+        targetX += shiftAmount;
+        ShiftPosition();
     }
 
-    IEnumerator ShiftPosition(Vector3 targetPosition, float duration)
+    private void ShiftPosition()
     {
-        float time = 0;
-        Vector3 startPosition = transform.position;
-
-        while (time < duration)
-        {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
-            time += Time.deltaTime;
-            yield return null;
-        }
-
-        // Ensure the position is set to the target position
-        transform.position = targetPosition;
+        transform.DOMoveX(targetX, shiftDuration).SetEase(Ease.OutQuart);
     }
 }
