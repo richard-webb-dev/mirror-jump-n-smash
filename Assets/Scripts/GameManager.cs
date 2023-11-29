@@ -9,7 +9,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject gameOverPanel;
+    public GameOverPanelController gameOverPanel;
     public TMP_Text gameOverText;
 
     public int score = 0;
@@ -27,19 +27,8 @@ public class GameManager : MonoBehaviour
 
     public void showGameOverScreen(bool playerOneWin)
     {
-        if (playerOneWin)
-        {
-            gameOverText.text = "Blue WINS!";
-
-        }
-        if (!playerOneWin)
-        {
-            gameOverText.text = "Red WINS!";
-        }
-
-        gameOverPanel.SetActive(true);
+        gameOverPanel.AnimateGameOverText(playerOneWin ? player.one : player.two);
         Debug.Log("Game Over");
-
         // can't set timescale immediately to 0, otherwise lose music doesn't play
         DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0f, 2f).SetUpdate(true);  // Ensure the tween updates even when Time.timeScale is 0
     }
