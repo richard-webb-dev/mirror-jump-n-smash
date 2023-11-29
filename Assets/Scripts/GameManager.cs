@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 
 using UnityEngine.SceneManagement;
@@ -38,7 +39,9 @@ public class GameManager : MonoBehaviour
 
         gameOverPanel.SetActive(true);
         Debug.Log("Game Over");
-        Time.timeScale = 0f;
+
+        // can't set timescale immediately to 0, otherwise lose music doesn't play
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0f, 2f).SetUpdate(true);  // Ensure the tween updates even when Time.timeScale is 0
     }
     public void RestartGame()
     {

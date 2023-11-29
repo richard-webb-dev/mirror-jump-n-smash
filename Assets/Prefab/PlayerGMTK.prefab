@@ -10369,8 +10369,8 @@ MonoBehaviour:
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
+  TriggerOnce: 1
+  Preload: 1
   AllowNonRigidbodyDoppler: 0
   Params: []
   OverrideAttenuation: 0
