@@ -17,11 +17,14 @@ public class PlayerPositionConstrainer : MonoBehaviour
     public Transform rightBorder;
     public Transform divider;
 
+    private bool isAlive = true; // simple trick to stop on death constantly firing from the border checks
+
     void Update()
     {
         //Bounding Controlls
+        if (!isAlive) return;
 
-        if (p == player.one)
+            if (p == player.one)
         {
             if (transform.position.x < leftBorder.position.x + leftBorder.GetComponent<Collider2D>().bounds.extents.x)
             {
@@ -38,6 +41,7 @@ public class PlayerPositionConstrainer : MonoBehaviour
             if (leftBorder.position.x > 0)
             {
                 onDeath.Invoke();
+                isAlive = false;
             }
         }
         if (p == player.two)
@@ -58,6 +62,7 @@ public class PlayerPositionConstrainer : MonoBehaviour
             if (rightBorder.position.x < 0)
             {
                 onDeath.Invoke();
+                isAlive = false;
             }
         }
     }
