@@ -75,7 +75,7 @@ public class PowerUp : MonoBehaviour
             {
                 case PowerType.shrink:
                     {
-                        collision.GetComponent<PlayerPowerUp>().shrinkTimer = 5f;
+                        collision.GetComponent<PlayerPowerUp>().ShrinkForSeconds(3f);
                         Destroy(gameObject);
                         break;
                     }

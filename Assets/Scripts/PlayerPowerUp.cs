@@ -1,38 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerPowerUp : MonoBehaviour
 {
-    public float shrinkTimer = 0f;
     public Vector3 shrinkToSize = new Vector3(0.4f, 0.25f, 1f);
     public Vector3 defaultSize = new Vector3(0.6f, 0.4f, 1f); /** should probably be 1, but left for backwards compatibility */
-    // Start is called before the first frame update
+    private Sequence scaleSequence;
+
     void Start()
     {
-
+        scaleSequence = DOTween.Sequence();
+        scaleSequence.Insert(0, transform.DOScale(shrinkToSize, 0.3f).SetEase(Ease.OutElastic));
+        scaleSequence.Insert(0,
+            DOTween.To(
+                () => GetComponent<characterGround>().colliderOffset,
+                x => GetComponent<characterGround>().colliderOffset = x,
+                new Vector3(0, 0.2f, 0)
+                , 0.3f
+            ).SetEase(Ease.OutElastic)
+        );
+        scaleSequence.AppendInterval(1.0f);
+        scaleSequence.SetLoops(2, LoopType.Yoyo);
+        scaleSequence.Pause();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShrinkForSeconds(float seconds)
     {
-        if (shrinkTimer != 0f)
-        {
-            transform.localScale = shrinkToSize;
-        }
-        else
-        {
-            transform.localScale = defaultSize;
-        }
-
-        if (shrinkTimer > 0)
-        {
-            shrinkTimer -= Time.deltaTime;
-        }
-        else if (shrinkTimer < 0)
-        {
-            shrinkTimer = 0f;
-        }
+        scaleSequence.Restart();
+        scaleSequence.timeScale = 1/seconds; // this is approx - was trying to be clever and re-use the tween, rather than killing it and recreating each time, but didn't really work
+        scaleSequence.Play();
     }
 
 }
