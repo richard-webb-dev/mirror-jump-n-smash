@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGame()
     {
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 1f, 1f).SetUpdate(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
