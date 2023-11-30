@@ -58,6 +58,26 @@ public class characterJump : MonoBehaviour
         defaultGravityScale = 1f;
     }
 
+    /** WebGL seems to not support multiple players from the same device with the new input system, wow. We then need to map the old input into the new one, for easy GMTK compatibility */
+    public void OnJump(bool started, bool canceled)
+    {
+        if (moveLimit.characterCanMove)
+        {
+            //When we press the jump button, tell the script that we desire a jump.
+            //Also, use the started and canceled contexts to know if we're currently holding the button
+            if (started)
+            {
+                desiredJump = true;
+                pressingJump = true;
+            }
+
+            if (canceled)
+            {
+                pressingJump = false;
+            }
+        }
+    }
+
     public void OnJump(InputAction.CallbackContext context)
     {
         //This function is called when one of the jump buttons (like space or the A button) is pressed.

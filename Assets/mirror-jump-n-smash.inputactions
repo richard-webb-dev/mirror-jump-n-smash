@@ -166,13 +166,13 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "WASD",
+                    "name": "LeftRight",
                     "id": "84823810-62b2-4fb4-a461-f83eb71071af",
                     "path": "Dpad",
                     "interactions": "",
@@ -232,7 +232,7 @@
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "JumpPlayer2",
                     "isComposite": false,
                     "isPartOfComposite": false

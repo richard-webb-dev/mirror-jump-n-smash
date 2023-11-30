@@ -45,6 +45,18 @@ public class characterMovement : MonoBehaviour
         ground = GetComponent<characterGround>();
     }
 
+    /** WebGL seems to not support multiple players from the same device with the new input system, wow. We then need to map the old input into the new one, for easy GMTK compatibility */
+    public void OnMovement(float moveLeft, float moveRight)
+    {
+        //This is called when you input a direction on a valid input type, such as arrow keys or analogue stick
+        //The value will read -1 when pressing left, 0 when idle, and 1 when pressing right.
+
+        if (moveLimit.characterCanMove)
+        {
+            directionX = moveRight - moveLeft;
+        }
+    }
+
     public void OnMovement(InputAction.CallbackContext context)
     {
         //This is called when you input a direction on a valid input type, such as arrow keys or analogue stick
